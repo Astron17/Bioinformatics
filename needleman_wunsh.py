@@ -85,7 +85,9 @@ def find_each_path(c_i, c_j,
     return len(ALN_PATHWAYS)
 
 """ Program Starts Here """
+
 """ Creates score matrix """
+
 for i in range(MATRIX_ROW):
     MATRIX[i][0] = [GAP_SCORE * i, []]
 for j in range(MATRIX_COLUMN):
