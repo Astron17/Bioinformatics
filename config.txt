@@ -1,0 +1,4 @@
+[var]
+GAP_PENALTY = -1
+SAME = 1
+DIFF = 0
