@@ -21,9 +21,11 @@ import test_bio
 # with open(args.b, 'r') as file2:
 #     Sequence_2 = (file2.read())
 
+""" Declaring the variables and parsing the values form the text file """
 
-Sequence_1 = 'SUM'
-Sequence_2 = 'SAM'
+
+Sequence_1 = 'TEST'
+Sequence_2 = 'TAST'
 Matrix_Row = len(Sequence_1)+1
 Matrix_Column = len(Sequence_2)+1
 # Match_Score = int(configParser.get('var', 'SAME'))
@@ -38,6 +40,9 @@ Matrix = [[[[None] for i in range(2)] for i in range(
     Matrix_Column)] for i in range(Matrix_Row)]
 
 
+""" This function writes all possible arrangements to the Output file """
+
+
 def Print_Arrangements(ARRANGMENTS):
     print('Total ARRANGMENTS: ' + str(len(ARRANGMENTS)))
     print('Overall Score: '+str(ARRANGMENTS[0][3][0][1])+'\n')
@@ -48,6 +53,9 @@ def Print_Arrangements(ARRANGMENTS):
         for Elements in ARRANGMENTS:
             file1.write(Elements[0] + '\n' + Elements[1] + '\n' + '\n')
     return
+
+
+""" This function finds all the paths """
 
 
 def Find_All_Paths(c_i, c_j, path=''):
@@ -89,6 +97,10 @@ def Find_All_Paths(c_i, c_j, path=''):
                 n_j = j
             Find_All_Paths(n_i, n_j, tmp_path)
     return len(Arrangement_Ways)
+
+
+""" Program Starts Here """
+""" Creates score matrix """
 
 
 for i in range(Matrix_Row):
@@ -146,4 +158,3 @@ for Elements in Arrangement_Ways:
                         Elements, alignment_info, alignment_count])
 
 Print_Arrangements(ARRANGMENTS)
-
